@@ -1,0 +1,132 @@
+/* Contenedor general del blog */
+.blog-container {
+    padding: 0; /* Quitar padding innecesario */
+    width: 100vw; /* Utilizar el 100% del ancho de la ventana */
+    margin: 0; /* Quitar margenes para ocupar toda la pantalla */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh; /* Ocupar toda la pantalla */
+    box-sizing: border-box; /* Asegura que el padding no incremente el tamaño */
+    background-color: transparent; /* Asegurar que el fondo sea transparente */
+  }
+  
+  /* Tabla de blogs */
+  .table {
+    width: 100%;  /* Tabla ocupa todo el ancho */
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    background-color: transparent; /* Quitar cualquier fondo adicional */
+    border: none; /* Asegurarse de que no haya bordes visibles */
+    max-width: 1200px; /* Limitar el ancho máximo de la tabla en pantallas grandes */
+  }
+  
+  /* Encabezado de la tabla */
+  .table-header {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 2fr;
+    background-color: #2196f3;  /* Azul para mayor contraste */
+    color: #ffffff;  /* Letras blancas */
+    padding: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  /* Fila de la tabla */
+  .table-row {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 2fr;
+    background-color: #ffffff;  /* Fondo blanco */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+    transition: transform 0.2s ease; /* Añadir una pequeña transición */
+  }
+  
+  .table-row:hover {
+    transform: scale(1.01); /* Leve aumento al pasar el ratón para dar un feedback visual */
+  }
+  
+  /* Celda de la tabla */
+  .table-cell {
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #000000; /* Cambiar color de texto a negro */
+  }
+  
+  /* Encabezado de columna */
+  .column-header {
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  /* Botón de consulta */
+  .consult-button {
+    padding: 1rem 2rem;  /* Aumentar tamaño del botón */
+    font-size: 1.2rem;  /* Fuente más grande */
+    color: #ffffff;
+    background-color: #1976d2;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .consult-button:hover {
+    background-color: #135ba1;
+  }
+  
+  /* Botón de limpiar */
+  .clear-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: #00bcd4; /* Color celeste */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .clear-button:hover {
+    background-color: #0097a7;
+  }
+  
+  /* Ajustes de diseño responsivo */
+  @media (max-width: 768px) {
+    .table-header, .table-row {
+      grid-template-columns: 1fr 2fr;
+    }
+  
+    .table-header div:nth-child(n+3), 
+    .table-row div:nth-child(n+3) {
+      display: none;  /* Ocultar columnas para dispositivos pequeños */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .table-header, .table-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .table-header {
+      font-size: 0.9rem;
+    }
+  
+    .table-cell {
+      font-size: 0.8rem;
+    }
+  
+    .consult-button, .clear-button {
+      width: 90%;
+    }
+  }
+  
